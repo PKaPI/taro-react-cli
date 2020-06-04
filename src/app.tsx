@@ -1,10 +1,7 @@
 import Taro, { Component, Config } from '@tarojs/taro'
 import { Provider } from '@tarojs/redux'
-
-import Index from './pages/index'
-
+import Index from './pages/home/index/index'
 import configStore from './store'
-
 import './app.scss'
 
 // 如果需要在 h5 环境中开启 React Devtools
@@ -26,13 +23,40 @@ class App extends Component {
    */
   config: Config = {
     pages: [
-      'pages/index/index'
+      'pages/home/index/index'
     ],
     window: {
       backgroundTextStyle: 'light',
-      navigationBarBackgroundColor: '#fff440',
+      navigationBarBackgroundColor: '#F5A623',
       navigationBarTitleText: 'WeChat',
-      navigationBarTextStyle: 'black'
+      navigationBarTextStyle: 'white'
+    },
+    tabBar: {
+      color: "#666",
+      selectedColor: "#F5A623",
+      backgroundColor: "#fafafa",
+      borderStyle: 'white',
+      list: [{
+        pagePath: 'pages/home/index/index',
+        iconPath: "./assets/tab-bar/home.png",
+        selectedIconPath: "./assets/tab-bar/home-active.png",
+        text: "首页"
+      }, {
+        pagePath: 'pages/home/index/index',
+        iconPath: "./assets/tab-bar/cate.png",
+        selectedIconPath: "./assets/tab-bar/cate-active.png",
+        text: "门店菜单"
+      }, {
+        pagePath: 'pages/home/index/index',
+        iconPath: "./assets/tab-bar/cart.png",
+        selectedIconPath: "./assets/tab-bar/cart-active.png",
+        text: "活动"
+      }, {
+        pagePath: 'pages/home/index/index',
+        iconPath: "./assets/tab-bar/user.png",
+        selectedIconPath: "./assets/tab-bar/user-active.png",
+        text: "我的"
+      }]
     }
   }
 
